@@ -1,10 +1,10 @@
 require_relative './part_1_solution.rb'
 require 'pry'
+
 consolidated_cart = [
   {:item => "AVOCADO", :price => 3.00, :clearance => true, :count => 3},
   {:item => "KALE",    :price => 3.00, :clearance => false, :count => 1}
 ]
-
 coupon_array = [
   {:item => "AVOCADO", :num => 2, :cost => 5.00}
 ]
