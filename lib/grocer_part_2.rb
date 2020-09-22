@@ -49,7 +49,10 @@ def checkout(cart, coupons)
     sum += (current[:price] * current[:count]).round(2)
   end
   
-  if grand_total >
+  if grand_total >= 100
+    grand_total *= 0.9
+  end
+  
+  grand_total
+  
 end
-
-puts apply_clearance(consolidated_cart)
