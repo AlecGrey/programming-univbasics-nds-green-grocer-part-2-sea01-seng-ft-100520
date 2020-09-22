@@ -45,9 +45,7 @@ def checkout(cart, coupons)
   new_cart_with_coupons = apply_coupons(new_cart, coupons)
   new_cart_with_discounts = apply_clearance(new_cart_with_coupons)
   
-  grand_total = 0.0
-  
-  new_cart_with_discounts.reduce do |current|
+  grand_total = new_cart_with_discounts.reduce(0.0) do |current|
     grand_total += (current[:price] * current[:count])
   
 end
