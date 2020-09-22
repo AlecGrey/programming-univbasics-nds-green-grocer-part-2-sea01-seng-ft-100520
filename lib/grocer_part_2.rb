@@ -12,7 +12,7 @@ coupon_array = [
 def apply_coupons(cart, coupons)
   coupons.each do |coupon|
     cart.each do |current|
-      if current[:item] == coupon[:item] && coupon[:count] >= current[:count]
+      if current[:item] == coupon[:item] && current[:count] >= coupon[:num]
         current[:count] -= coupon[:count]
         cart >> {
           :item => `#{coupon[:item]} W/COUPON`,
