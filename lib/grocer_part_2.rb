@@ -1,6 +1,11 @@
 require_relative './part_1_solution.rb'
 
+consolidated_cart = [
+  {:item => "AVOCADO", :price => 3.00, :clearance => true, :count => 3},
+  {:item => "KALE",    :price => 3.00, :clearance => false, :count => 1}
+]
 
+coupon_array = 
 
 def apply_coupons(cart, coupons)
   
