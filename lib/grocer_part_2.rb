@@ -1,5 +1,5 @@
 require_relative './part_1_solution.rb'
-
+require 'pry'
 consolidated_cart = [
   {:item => "AVOCADO", :price => 3.00, :clearance => true, :count => 3},
   {:item => "KALE",    :price => 3.00, :clearance => false, :count => 1}
@@ -14,6 +14,7 @@ def apply_coupons(cart, coupons)
     cart.each do |current|
       if current[:item] == coupon[:item] && current[:count] >= coupon[:num]
         current[:count] -= coupon[:num]
+        binding.pry
         cart >> {
           :item => `#{coupon[:item]} W/COUPON`,
           :price => coupon[:cost] / coupon[:num],
