@@ -27,12 +27,13 @@ def apply_coupons(cart, coupons)
 end
 
 def apply_clearance(cart)
-  
   cart.each do |current|
-    
     if current[:clearance]
-      current[:price] 
-  
+      current[:price] *= 0.8 
+      current[:price].round(2)
+    end
+  end
+  cart
 end
 
 def checkout(cart, coupons)
@@ -47,4 +48,4 @@ def checkout(cart, coupons)
   # some irritated customers
 end
 
-puts apply_coupons(consolidated_cart, coupon_array)
+puts apply_clearance(consolidated_cart)
