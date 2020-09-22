@@ -5,14 +5,13 @@ consolidated_cart = [
   {:item => "KALE",    :price => 3.00, :clearance => false, :count => 1}
 ]
 
-coupon_array = 
+coupon_array = [
+  {:item => "AVOCADO", :num => 2, :cost => 5.00}
+]
 
 def apply_coupons(cart, coupons)
-  
   coupons.each do |coupon|
-    
     cart.each do |current|
-      
       if current[:item] == coupon[:item] && coupon[:count] >= current[:count]
         current[:count] -= coupon[:count]
         cart >> {
