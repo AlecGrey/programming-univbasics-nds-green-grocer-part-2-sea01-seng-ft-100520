@@ -7,7 +7,11 @@ def apply_coupons(cart, coupons)
     cart.each do |current|
       
       if current[:item] == coupon[:item] && coupon[:count] >= current[:count]
-        
+        current[:count] -= coupon[:count]
+        cart >> {
+          :item => `#{current[:item]} W/COUPON`
+          :price => coupon[:cost] / 
+        }
   
 end
 
