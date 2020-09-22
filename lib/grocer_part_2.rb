@@ -16,7 +16,7 @@ def apply_coupons(cart, coupons)
         current[:count] -= coupon[:num]
         binding.pry
         cart >> {
-          :item => `#{coupon[:item]} W/COUPON`,
+          :item => "#{coupon[:item]} W/COUPON",
           :price => coupon[:cost] / coupon[:num],
           :count => coupon[:num]
         }
