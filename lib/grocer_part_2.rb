@@ -37,15 +37,19 @@ def apply_clearance(cart)
 end
 
 def checkout(cart, coupons)
-  # Consult README for inputs and outputs
-  #
   # This method should call
   # * consolidate_cart
   # * apply_coupons
   # * apply_clearance
-  #
-  # BEFORE it begins the work of calculating the total (or else you might have
-  # some irritated customers
+  new_cart = consolidate_cart(cart)
+  new_cart_with_coupons = apply_coupons(new_cart, coupons)
+  new_cart_with_discounts = apply_clearance(new_cart_with_coupons)
+  
+  grand_total = 0.0
+  
+  new_cart_with_discounts.reduce do |current|
+    grand_total += (current[:price] * current[:count])
+  
 end
 
 puts apply_clearance(consolidated_cart)
