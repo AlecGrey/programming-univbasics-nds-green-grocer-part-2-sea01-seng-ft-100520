@@ -56,3 +56,5 @@ def checkout(cart, coupons)
   grand_total
   
 end
+
+puts checkout(consolidated_cart, coupon_array)
