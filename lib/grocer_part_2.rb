@@ -37,10 +37,7 @@ def apply_clearance(cart)
 end
 
 def checkout(cart, coupons)
-  # This method should call
-  # * consolidate_cart
-  # * apply_coupons
-  # * apply_clearance
+  
   new_cart = consolidate_cart(cart)
   new_cart_with_coupons = apply_coupons(new_cart, coupons)
   new_cart_with_discounts = apply_clearance(new_cart_with_coupons)
@@ -48,11 +45,8 @@ def checkout(cart, coupons)
   grand_total = new_cart_with_discounts.reduce(0) do |sum, current|
     sum += (current[:price] * current[:count]).round(2)
   end
-  
   if grand_total >= 100
     grand_total *= 0.9
   end
-  
   grand_total
-  
 end
