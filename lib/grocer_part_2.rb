@@ -30,7 +30,7 @@ def apply_clearance(cart)
   cart.each do |current|
     if current[:clearance]
       current[:price] *= 0.8
-      binding.pry
+      current[:price] = current[:price].round(3)
     end
   end
   cart
