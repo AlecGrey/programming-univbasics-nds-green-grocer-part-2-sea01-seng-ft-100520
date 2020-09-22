@@ -9,10 +9,14 @@ def apply_coupons(cart, coupons)
       if current[:item] == coupon[:item] && coupon[:count] >= current[:count]
         current[:count] -= coupon[:count]
         cart >> {
-          :item => `#{current[:item]} W/COUPON`
-          :price => coupon[:cost] / 
+          :item => `#{coupon[:item]} W/COUPON`
+          :price => coupon[:cost] / coupon[:num]
+          :count => coupon[:num]
         }
-  
+      end
+    end
+  end
+  cart
 end
 
 def apply_clearance(cart)
